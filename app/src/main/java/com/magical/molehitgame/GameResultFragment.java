@@ -2,6 +2,9 @@ package com.magical.molehitgame;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Intent;
+import android.view.View;
 import android.widget.TextView;
 import butterknife.BindView;
 import com.magical.molehitgame.base.BaseFragment;
@@ -90,11 +93,11 @@ public class GameResultFragment extends BaseFragment {
 
             String ratingText;
             if (score > 20) {
-                ratingText = "游戏达人";
+                ratingText = "Game expert";
             } else if (score > 10) {
-                ratingText = "新手玩家";
+                ratingText = "Novice players";
             } else {
-                ratingText = "小白一个";
+                ratingText = "Little white one";
             }
             mGameRateView.setText(ratingText);
 
@@ -124,6 +127,13 @@ public class GameResultFragment extends BaseFragment {
             }, 750);
             playOnce = true;
         }
+        findViewById(R.id.id_start_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().finish();
+                startActivity(new Intent(getActivity(),GameMainActivity.class));
+            }
+        });
     }
 
     @Override

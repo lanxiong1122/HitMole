@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us</title>
+    <style>
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+  }
+  .about-section {
+    padding: 20px;
+    background-color: #f4f4f4;
+  }
+  .numbered-paragraph {
+    position: relative;
+    padding-left: 70px;
+    margin-bottom: 20px;
+  }
+  .numbered-paragraph:before {
+    content: attr(data-number);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Arial Black', Gadget, sans-serif;
+    font-size: 24px;
+    width: 50px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="about-section">
+    <h1>About Us</h1>
+    <p class="numbered-paragraph" data-number="1">Welcome to our world where technology transforms life, a classic casual game filled with laughter and challenges.</p>
+    <p class="numbered-paragraph" data-number="2">We are a group of passionate game developers dedicated to creating experiences that both relax players and spark endless fun.</p>
+    <p class="numbered-paragraph" data-number="3">Since our founding, we have always upheld principles of innovation and quality, continuously exploring new frontiers in game design.</p>
+</div>
+
+</body>
+</html>

@@ -9,7 +9,8 @@
       android:id="@+id/id_a"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="开始游戏"
+      android:text="Start"
+      android:textAllCaps="false"
       android:visibility="gone" />
 
   <Button
@@ -17,7 +18,7 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginLeft="100dp"
-      android:text="下一页"
+      android:text="next page"
       android:visibility="gone" />
 
   <TextView
@@ -27,7 +28,7 @@
       android:layout_gravity="right"
       android:layout_marginRight="20dp"
       android:layout_marginTop="10dp"
-      android:text="剩余时间："
+      android:text="Remaining time："
       android:textColor="#333333"
       android:textSize="18sp"
       android:visibility="gone" />
@@ -39,7 +40,7 @@
       android:layout_gravity="right"
       android:layout_marginRight="20dp"
       android:layout_marginTop="50dp"
-      android:text="总分："
+      android:text="Total score："
       android:textColor="#333333"
       android:textSize="18sp"
       android:visibility="gone" />
@@ -66,7 +67,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:text="目标"
+        android:text="target"
         android:textColor="@color/c1"
         android:textSize="25sp" />
 

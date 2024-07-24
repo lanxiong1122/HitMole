@@ -20,7 +20,7 @@ import java.util.Random;
 public class RandomThread extends Thread {
 
     private static final String TAG = RandomThread.class.getSimpleName();
-    private static final long GAME_TIME = 18 * 1000;
+    private static final long GAME_TIME = 30 * 1000;
 
     private static final int MAX_MUSHROOM = 12;
 

@@ -23,8 +23,9 @@
 
       <ImageView
           android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:src="@drawable/img_sign_in_whack_mole_dialog" />
+          android:layout_height="wrap_content"/>
+      <!--
+          android:src="@drawable/img_sign_in_whack_mole_dialog" -->
 
       <TextView
           android:id="@+id/id_game_rate"
@@ -53,7 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
-        android:text="TA们都和你一样厉害，了解一下 ✲(✿◕ฺ ∀◕✿)✲"
+        android:text="They are as skilled as you, let's get to know them ✲(✿◕ฺ ∀◕✿)✲"
         android:textColor="@color/main_c2"
         android:textSize="16sp" />
 
@@ -70,13 +71,15 @@
 
     <Button
         android:id="@+id/id_start_button"
-        android:layout_width="180dp"
+        android:layout_width="wrap_content"
         android:layout_height="45dp"
+        android:padding="6dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="50dp"
         android:background="@drawable/shape_start_button"
-        android:text="开启一起玩"
+        android:text="Start playing together"
         android:textColor="@color/c1"
+        android:textAllCaps="false"
         android:textSize="18sp"
         android:textStyle="bold" />
   </LinearLayout>

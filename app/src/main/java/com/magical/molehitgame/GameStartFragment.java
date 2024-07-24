@@ -1,6 +1,9 @@
 package com.magical.molehitgame;
 
+import android.content.Intent;
 import android.view.View;
+import android.widget.TextView;
+
 import butterknife.BindView;
 import com.magical.molehitgame.base.BaseFragment;
 
@@ -11,6 +14,10 @@ import com.magical.molehitgame.base.BaseFragment;
 public class GameStartFragment extends BaseFragment {
 
     @BindView(R.id.id_start_next) View mNextView;
+    @BindView(R.id.woimen)
+    TextView women;
+    @BindView(R.id.yinsi)
+    TextView yinsi;
 
     @Override
     protected void doLoadData() {
@@ -25,6 +32,20 @@ public class GameStartFragment extends BaseFragment {
             public void onClick(View v) {
 
                 ((GameMainActivity) mContext).changePage(1);
+            }
+        });
+        women.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                BroseActivity.page = "2";
+                startActivity(new Intent(getActivity(),BroseActivity.class));
+            }
+        });
+        yinsi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                BroseActivity.page = "1";
+                startActivity(new Intent(getActivity(),BroseActivity.class));
             }
         });
     }

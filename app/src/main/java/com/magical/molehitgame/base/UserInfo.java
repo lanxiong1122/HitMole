@@ -22,18 +22,18 @@ public class UserInfo {
         if (count == 0) {
 
             userInfo.avatar = AVATAR_1;
-            userInfo.nickname = "大宝So3";
-            userInfo.text = "处CP吗，我铁观音";
+            userInfo.nickname = "player goer";
+            userInfo.text = "Come on, it's great";
         } else if (count == 1) {
 
             userInfo.avatar = AVATAR_2;
-            userInfo.nickname = "doubleSo3";
-            userInfo.text = "叔叔我们不约";
+            userInfo.nickname = "player goer";
+            userInfo.text = "It's still a bit lacking";
         } else {
 
             userInfo.avatar = AVATAR_3;
-            userInfo.nickname = "大宝天天见";
-            userInfo.text = "皇后大道东哦皇后大道西";
+            userInfo.nickname = "player goer";
+            userInfo.text = "Come on, it could be even better";
         }
 
         count++;

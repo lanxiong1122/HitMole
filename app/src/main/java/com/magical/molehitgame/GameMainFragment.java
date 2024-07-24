@@ -74,7 +74,8 @@ public class GameMainFragment extends BaseFragment {
                 case GameMsg.MSG_WHAT_GAP:
 
                     int remainTime = msg.arg1;
-                    mCountDownView.setText("剩余时间：" + String.valueOf(remainTime) + "秒");
+                    mCountDownView.setVisibility(View.VISIBLE);
+                    mCountDownView.setText("Remaining time：" + String.valueOf(remainTime) + "seconds");
                     break;
 
                 case GameMsg.MSG_WHAT_END:
@@ -175,6 +176,7 @@ public class GameMainFragment extends BaseFragment {
         //线程开启轮询
         randomThread.start();
         randomThread.startGame();
+        Toast.makeText(getActivity(), "Countdown 30 seconds", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -579,12 +581,13 @@ public class GameMainFragment extends BaseFragment {
     private void onGameOver() {
 
         mCountDownView.setText("游戏结束");
+        mCountDownView.setVisibility(View.GONE);
 
         if (score < 0) {
             score = 0;
         }
-        mScoreView.setText("总分：" + score);
-        Toast.makeText(getActivity(), "恭喜你！！！" + score + "分", Toast.LENGTH_LONG).show();
+        mScoreView.setText("Total：" + score);
+        Toast.makeText(getActivity(), "congratulations！！！" + score + "Score", Toast.LENGTH_LONG).show();
 
         for (int i = 0; i < mMoleList.size(); i++) {
 
