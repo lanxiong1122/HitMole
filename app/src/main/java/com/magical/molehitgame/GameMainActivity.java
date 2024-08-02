@@ -89,7 +89,7 @@ public class GameMainActivity extends AppCompatActivity {
 
         //游戏页屏蔽返回键
         if (keyCode == KeyEvent.KEYCODE_BACK) {
-            return true;
+           // return true;
         }
 
         return super.onKeyDown(keyCode, event);

@@ -9,10 +9,16 @@ import android.os.Bundle;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.TextView;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 public class BroseActivity extends AppCompatActivity {
 
-    private WebView mywebView;
+    private TextView textView;
     public static String page = "1";
 
 
@@ -20,20 +26,43 @@ public class BroseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_brose);
-        mywebView=(WebView) findViewById(R.id.webview);
+        textView=(TextView) findViewById(R.id.textView);
         //mywebView.setWebViewClient(new WebViewClient());
-        mywebView.setWebViewClient(new mywebClient());
-        mywebView.loadUrl(page.equals("1")?"https://www.freeprivacypolicy.com/live/19a4c967-a544-497d-b389-5455557bcaa4":"file:///android_asset/us.html");
-        WebSettings webSettings=mywebView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
+        //mywebView.setWebViewClient(new mywebClient());
+        //mywebView.loadUrl(page.equals("1")?"https://www.freeprivacypolicy.com/live/19a4c967-a544-497d-b389-5455557bcaa4":"file:///android_asset/us.txt");
+        //WebSettings webSettings=mywebView.getSettings();
+        //webSettings.setJavaScriptEnabled(true);
+        lookText();
     }
 
 
+        protected void lookText() {
+
+            // 从assets文件夹读取文件
+            try {
+                InputStream inputStream = getAssets().open(page.equals("1")?"pra.txt":"us.txt");
+                BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+                StringBuilder stringBuilder = new StringBuilder();
+                String line;
+
+                while ((line = reader.readLine()) != null) {
+                    stringBuilder.append(line).append("\n");
+                }
+
+                reader.close();
+                inputStream.close();
+
+                // 设置文本到TextView
+                textView.setText(stringBuilder.toString());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
 
 
 
-    public class mywebClient extends WebViewClient {
+    /*public class mywebClient extends WebViewClient {
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
             super.onPageStarted(view,url,favicon);
@@ -43,14 +72,14 @@ public class BroseActivity extends AppCompatActivity {
             view.loadUrl(url);
             return true;
         }
-    }
-    @Override
+    }*/
+   /* @Override
     public void onBackPressed() {
         if (mywebView.canGoBack()) {
             mywebView.goBack();
         } else {
             super.onBackPressed();
         }
-    }
+    }*/
 
 }
